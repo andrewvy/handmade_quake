@@ -1,6 +1,6 @@
 #include "quakedef.h"
 
-void Q_strcpy(uint8_t *dest, uint8_t *src) {
+void Q_strcpy(char *dest, const char *src) {
   while (*src) {
     *dest++ = *src++;
   }
@@ -8,7 +8,7 @@ void Q_strcpy(uint8_t *dest, uint8_t *src) {
   *dest = 0;
 }
 
-void Q_strncpy(uint8_t *dest, uint8_t *src, int32_t count) {
+void Q_strncpy(char *dest, const char *src, int32_t count) {
   if (count < 0)
     return;
 
@@ -23,7 +23,7 @@ void Q_strncpy(uint8_t *dest, uint8_t *src, int32_t count) {
   }
 }
 
-void Q_strlen(uint8_t *str) {
+int32_t Q_strlen(const char *str) {
   int32_t count = 0;
 
   while (*str++)
@@ -32,7 +32,7 @@ void Q_strlen(uint8_t *str) {
   return count;
 }
 
-int32_t Q_strcmp(uint8_t *s1, uint8_t *s2) {
+int32_t Q_strcmp(const char *s1, const char *s2) {
   while (*s1 == *s2) {
     if (!*s1)
       return 0;
@@ -48,7 +48,7 @@ int32_t Q_strcmp(uint8_t *s1, uint8_t *s2) {
 // Handling decimal or hexadecimal
 // Negative and positive
 // "-52" "12" "0x42"
-int32_t Q_atoi(uint8_t *str) {
+int32_t Q_atoi(const char *str) {
   int32_t sign = 1;
   int32_t val = 0;
   uint8_t c;
