@@ -2,3 +2,5 @@
 
 #include <stdio.h>
 #include <windows.h>
+
+extern HINSTANCE GlobalInstance;
