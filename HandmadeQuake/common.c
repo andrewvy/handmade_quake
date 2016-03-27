@@ -1,6 +1,6 @@
 #include "quakedef.h"
 
-uint32_t com_argc = 1;
+int32_t com_argc = 1;
 uint8_t *com_argv[MAX_NUM_ARGVS + 1];
 
 int32_t COM_CheckParm(uint8_t *parm) {

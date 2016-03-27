@@ -4,3 +4,4 @@
 
 #include "common.h"
 #include "q_stl.h"
+#include "host.h"

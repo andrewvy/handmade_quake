@@ -2,7 +2,12 @@
 
 #define MAX_NUM_ARGVS 50 
 
-extern uint32_t com_argc;
+#undef true
+#undef false
+
+typedef enum { false, true } qboolean;
+
+extern int32_t com_argc;
 extern uint8_t *com_argv[MAX_NUM_ARGVS + 1];
 
 void COM_ParseCmdLine(uint8_t *lpCmdLine);
